@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Current Weather</h1>
+    <ul>
+        {% for weather in weather_data %}
+        <li>{{ weather.location }} : {{ weather.temperature }}°C : {{ weather.humidity }}% : {{ weather.wind_speed }}m/s</li>
+        {% endfor %}
+    </ul>   
+</body>
+</html>   

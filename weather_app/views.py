@@ -13,10 +13,10 @@ def home(request):
     data = response.json()
     location = data['name']
     temperature = data['main']['temp']
-    humidity = data['main']['humididty']
+    humidity = data['main']['humidity']
     wind_speed = data['wind']['speed']
-    Weather.objects.create(location=location,t=temperature,humidity=humidity,wind_speed=wind_speed)
+    Weather.objects.create(location=location,temperature=temperature,humidity=humidity,wind_speed=wind_speed)
     weather_data = Weather.objects.all()
 
-    
+
     return render(request,'home.html',{'weather_data':weather_data})
